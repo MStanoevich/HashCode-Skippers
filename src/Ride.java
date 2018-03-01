@@ -1,8 +1,8 @@
 public class Ride {
     int startStep, endStep;
-    int startPos[] = new int[2];
-    int endPos[] = new int[2];
-    boolean ridden = false;
+    int endPos[], startPos[];
+    boolean ridden;
+    boolean bonusAvail = false;
 
     public Ride(int startStep, int endStep, int startPos[], int endPos[]) {
         this.startStep = startStep;
@@ -10,7 +10,6 @@ public class Ride {
         this.startPos = startPos;
         this.endPos = endPos;
         this.ridden = false;
-
     }
 
     public void setStartStep(int startStep){
