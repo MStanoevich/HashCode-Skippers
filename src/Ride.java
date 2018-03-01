@@ -4,6 +4,15 @@ public class Ride {
     int endPos[] = new int[2];
     boolean ridden = false;
 
+    public Ride(int startStep, int endStep, int startPos[], int endPos[]) {
+        this.startStep = startStep;
+        this.endStep = endStep;
+        this.startPos = startPos;
+        this.endPos = endPos;
+        this.ridden = false;
+
+    }
+
     public void setStartStep(int startStep){
         this.startStep = startStep;
     }
