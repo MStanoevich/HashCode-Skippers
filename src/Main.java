@@ -55,8 +55,8 @@ public class Main {
         // start at 1 as line 0 is the summary
 
         int index = 0;
-        for(int i = 1; i < cars.length; i++) {
-            String[] ride = cars[i].split("\\s+");
+        for(int i = 1; i < row.length; i++) {
+            String[] ride = row[i].split("\\s+");
             // assign values to rides
             int startX = Integer.parseInt(ride[0]);
             int startY = Integer.parseInt(ride[1]);
@@ -71,6 +71,7 @@ public class Main {
             index++;
 
         }
+        return rides;
 
     }
 
@@ -120,7 +121,7 @@ public class Main {
     }
    
     // Method for generating the cars from the input file
-    public Car[] createCars() {
+    public static Car[] createCars() {
 
             BufferedReader br = null;
             File file = new File("Examples/a_example.in");
@@ -163,9 +164,9 @@ public class Main {
         
         Car[] cars = new Car[vehicles];
 
-        index = 0;
+        int index = 0;
         for(int i = 0; i < vehicles; i++){
-            int[] startPos = {0,0}
+            int[] startPos = {0,0};
             int id = 1;
             int distance = 0;
             Ride[] ridesTaken = null;
@@ -178,7 +179,7 @@ public class Main {
 
     
 
-    public int getSteps(){
+    public static int getSteps(){
             BufferedReader br = null;
             File file = new File("Examples/a_example.in");
             try {
