@@ -1,28 +1,38 @@
 public class Ride {
-    int start, end;
+    int startStep, endStep;
     int startPos[] = new int[2];
     int endPos[] = new int[2];
+    boolean ridden = false;
 
-    public void setStart(int start){
-        this.start = start;
+    public void setStartStep(int startStep){
+        this.startStep = startStep;
     }
 
-    public int getStart(){
-        return this.start;
+    public int getStartStep(){
+        return this.startStep;
     }
 
-    public void setEnd(int end){
-        this.end = end;
+    public void setEndStep(int endStep){
+        this.endStep = endStep;
     }
 
-    public int getEnd(){
-        return this.end;
+    public int getEndStep(){
+        return this.endStep;
     }
 
     public int distance(){
-        return Math.abs(start - end);
+        return Math.abs(startStep - endStep);
     }
 
-    public void setPos(){}
+    public void setPos(int startX, int startY, int endX, int endY){
+        startPos[0] = startX;
+        startPos[1] = startY;
+        endPos[0] = endX;
+        endPos[1] = endY;
+    }
+
+    public boolean rideTaken(){
+        return ridden;
+    }
 
 }

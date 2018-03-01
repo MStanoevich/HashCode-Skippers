@@ -1,7 +1,8 @@
 
 public class Car {
-	public int[][] pos = {{0},{0}};
-	public int id;
+	public int[][] posCar = {{0},{0}};
+	public int carId;
 	public int distance;
-	public boolean[] ridesTaken;
+	public Ride[] ridesTaken;
+
 }
