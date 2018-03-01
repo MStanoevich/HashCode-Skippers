@@ -3,13 +3,15 @@ public class Ride {
     int startPos[] = new int[2];
     int endPos[] = new int[2];
     boolean ridden = false;
+    int id;
 
-    public Ride(int startStep, int endStep, int startPos[], int endPos[]) {
+    public Ride(int startStep, int endStep, int startPos[], int endPos[], int id) {
         this.startStep = startStep;
         this.endStep = endStep;
         this.startPos = startPos;
         this.endPos = endPos;
         this.ridden = false;
+        this.id = id;
 
     }
 
