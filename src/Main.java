@@ -2,13 +2,10 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-    	createRides();
-        
+    	Ride[] rides = createRides();
+        Car[] cars = createCars();
+        int steps = getSteps();
 
-
-        
-            
-        }
 
     }
     
@@ -41,10 +38,10 @@ public class Main {
             }
         }
         String s = sb.toString();
-        String[] cars = s.split("\\n");
+        String[] row = s.split("\\n");
 
 
-        String[] summary = cars[0].split("\\s+");
+        String[] summary = row[0].split("\\s+");
         int rows = Integer.parseInt(summary[0]);
         int cols = Integer.parseInt(summary[1]);
         int vehicles = Integer.parseInt(summary[2]);
@@ -104,10 +101,10 @@ public class Main {
                 }
             }
             String s = sb.toString();
-            String[] cars = s.split("\\n");
+            String[] row = s.split("\\n");
 
 
-            String[] summary = cars[0].split("\\s+");
+            String[] summary = row[0].split("\\s+");
             int rows = Integer.parseInt(summary[0]);
             int cols = Integer.parseInt(summary[1]);
             int vehicles = Integer.parseInt(summary[2]);
@@ -131,4 +128,47 @@ public class Main {
 
         return cars;
     }
+
+    public int getSteps(){
+            BufferedReader br = null;
+            File file = new File("Examples/a_example.in");
+            try {
+                br = new BufferedReader(new FileReader(file));
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+            StringBuilder sb = new StringBuilder();
+            String line = "";
+            try {
+                line = br.readLine();
+            } catch (IOException e ) {
+                System.out.println(e.getMessage());
+            }
+
+            while(line != null) {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                try {
+
+                    line = br.readLine();
+
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+            String s = sb.toString();
+            String[] row = s.split("\\n");
+
+
+            String[] summary = row[0].split("\\s+");
+            int rows = Integer.parseInt(summary[0]);
+            int cols = Integer.parseInt(summary[1]);
+            int vehicles = Integer.parseInt(summary[2]);
+            int numRides = Integer.parseInt(summary[3]);
+            int bonus = Integer.parseInt(summary[4]);
+            int steps = Integer.parseInt(summary[5]);
+
+            return steps;
+        }
+
 }
